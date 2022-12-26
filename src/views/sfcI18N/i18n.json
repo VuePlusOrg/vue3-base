@@ -1,0 +1,8 @@
+{
+  "enUS": {
+    "This is a text for test I18N.": "This is a text for test I18N."
+  },
+  "zhCN": {
+    "This is a text for test I18N.": "这是一段用于测试I18N的语句"
+  }
+}

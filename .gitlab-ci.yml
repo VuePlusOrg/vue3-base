@@ -1,0 +1,21 @@
+image: node:14.18.0
+
+variables:
+  GIT_SSL_NO_VERIFY: '1'
+  DOCKER_DRIVER: 'overlay2'
+  DOCKER_TLS_CERTDIR: ''
+  TZ: 'Asia/Shanghai'
+
+stages:
+  - test
+
+Lint Test:
+  stage: test
+  tags:
+    - test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+  script:
+    - yarn global add pnpm
+    - pnpm install
+    - pnpm lint:check

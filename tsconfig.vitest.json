@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.app.json",
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "composite": true,
+    "lib": [],
+    "types": ["node", "jsdom", "vite/client", "vite-plugin-pages/client"]
+  }
+}

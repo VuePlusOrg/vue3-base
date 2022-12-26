@@ -1,0 +1,58 @@
+{
+  "path": "cz-conventional-changelog",
+  "disableScopeLowerCase": false,
+  "disableSubjectLowerCase": false,
+  "maxHeaderWidth": 100,
+  "maxLineWidth": 100,
+  "defaultType": "",
+  "defaultScope": "",
+  "defaultSubject": "",
+  "defaultBody": "",
+  "defaultIssues": "",
+  "types": {
+    "feat": {
+      "title": "feat",
+      "description": "feature added"
+    },
+    "fix": {
+      "title": "fix",
+      "description": "bug fixed"
+    },
+    "perf": {
+      "title": "perf",
+      "description": "feature optimization"
+    },
+    "refactor": {
+      "description": "internal implementation refactoring",
+      "title": "refactor"
+    },
+    "docs": {
+      "description": "documents updating",
+      "title": "docs"
+    },
+    "ci": {
+      "description": "continuous integration & continuous deployment",
+      "title": "ci"
+    },
+    "chore": {
+      "description": "updated for non-src folders",
+      "title": "chore"
+    },
+    "build": {
+      "description": "system building or package dependency updating",
+      "title": "build"
+    },
+    "test": {
+      "description": "unit tests updated",
+      "title": "test"
+    },
+    "revert": {
+      "description": "git version reverted",
+      "title": "revert"
+    },
+    "wip": {
+      "description": "feature is under development, commit to switch other branches for other development",
+      "title": "wip"
+    }
+  }
+}
