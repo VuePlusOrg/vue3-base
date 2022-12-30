@@ -7,7 +7,7 @@ export const useUserStore = defineStore('user', () => {
   const userInfo = reactive({
     userName: '',
     userId: '',
-    gender: 0
+    gender: -1
   })
 
   const clearToken = () => {
