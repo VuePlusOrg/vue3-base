@@ -3,7 +3,7 @@ import AxiosInterceptor from './interceptor'
 
 export const useRequest = () => {
   const axiosInstance = Axios.create({
-    baseURL: process.env.VUE_APP_BASE_URL,
+    baseURL: import.meta.env.VUE_APP_BASE_URL,
     headers: {
       'Content-Type': 'application/json'
     }
