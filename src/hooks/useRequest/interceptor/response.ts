@@ -1,5 +1,5 @@
 import type { AxiosError, AxiosInstance, AxiosResponse } from 'axios'
-import { useLogOut } from '@/hooks'
+import { useUserStore } from '@/stores'
 
 export default class ResponseInterceptor {
   /**
@@ -35,6 +35,7 @@ export default class ResponseInterceptor {
    * @returns Promise
    */
   private static onFail(error: AxiosError) {
+    const userStore = useUserStore()
     const httpStatusCode = error?.response?.status as number
 
     /**
@@ -63,7 +64,7 @@ export default class ResponseInterceptor {
         errorMessage =
           'Unexpected login failure, please contact your system administrator'
       }
-      useLogOut()
+      userStore.logout()
     }
 
     return Promise.reject(new Error(errorMessage))
