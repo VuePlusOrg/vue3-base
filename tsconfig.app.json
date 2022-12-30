@@ -8,7 +8,8 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["ant-design-vue/typings/global"],
-    "experimentalDecorators": true
+    "types": ["ant-design-vue/typings/global", "./types"],
+    "experimentalDecorators": true,
+    "jsx": "preserve"
   }
 }

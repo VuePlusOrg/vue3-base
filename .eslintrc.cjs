@@ -9,6 +9,9 @@ module.exports = {
     node: true,
     es6: true
   },
+  globals: {
+    JSX: 'readonly'
+  },
   extends: [
     'plugin:vue/vue3-recommended',
     'eslint:recommended',

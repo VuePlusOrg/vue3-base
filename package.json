@@ -27,6 +27,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0 -s"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "^3.2.15",
     "axios": "^1.2.1",
     "pinia": "^2.0.28",

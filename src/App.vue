@@ -4,10 +4,14 @@ import { useI18n } from 'vue-i18n'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 import enUS from 'ant-design-vue/es/locale/en_US'
 
+import { useRoute } from 'vue-router'
 import { useAppStore } from './stores'
+import AppLayout from '@/layouts/AppLayout/index.vue'
+import BlankLayout from '@/layouts/BlankLayout/index.vue'
 
 const { locale: i18NLocale } = useI18n({ useScope: 'global' })
 const appStore = useAppStore()
+const route = useRoute()
 
 const antdLocales = { zhCN, enUS }
 
@@ -25,6 +29,7 @@ watch(
 
 <template>
   <a-config-provider :locale="antdLocale">
-    <AppRouterView />
+    <AppLayout v-if="route.name !== 'Login'" />
+    <BlankLayout v-else />
   </a-config-provider>
 </template>
