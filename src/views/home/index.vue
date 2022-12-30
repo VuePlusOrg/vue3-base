@@ -1,4 +1,8 @@
-<script setup lang="ts" name="HomeView">
+<route lang="yaml">
+name: Home
+</route>
+
+<script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { useAppStore } from '@/stores'
 
