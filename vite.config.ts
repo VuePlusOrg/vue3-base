@@ -47,7 +47,7 @@ if (IS_PRODUCTION) {
       open: true,
       gzipSize: true,
       brotliSize: true
-    })
+    }) as PluginOption
   )
 }
 
