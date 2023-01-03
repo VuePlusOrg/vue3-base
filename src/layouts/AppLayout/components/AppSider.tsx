@@ -1,18 +1,24 @@
 import { computed, defineComponent, ref, h } from 'vue'
 import { Menu, MenuItem, LayoutSider, SubMenu } from 'ant-design-vue'
-import { PieChartOutlined } from '@ant-design/icons-vue'
+import { DashboardOutlined } from '@ant-design/icons-vue'
+import { useI18n } from 'vue-i18n'
 import type { MenuConfig } from '@/types'
 import './AppSider.less'
 
 export default defineComponent({
   setup() {
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'global'
+    })
+
     const collapsed = ref(false)
     const selectedKeys = ref(['1'])
     const menuConfig = ref<MenuConfig[]>([
       {
         routeName: 'aaa',
-        title: 'Internationalization',
-        icon: PieChartOutlined
+        title: 'Dashboard',
+        icon: DashboardOutlined
       }
     ])
 
@@ -24,7 +30,7 @@ export default defineComponent({
           DOMList.push(
             <MenuItem key={config.routeName}>
               {h(config.icon)}
-              <span>{config.title}</span>
+              <span>{t(config.title)}</span>
             </MenuItem>
           )
         } else {
