@@ -1,9 +1,16 @@
-# [1.0.0](https://github.com/VuePlusOrg/vue3-base/compare/178f141bd3119e00e48fd2add1f8a24d6b70642a...v1.0.0) (2022-12-26)
+# [1.1.1](https://github.com/VuePlusOrg/vue3-base/compare/v1.1.0...v1.1.1) (2023-01-03)
+
+
+### Bug Fixes
+
+* **vite.config.ts:** fix the problem that the type of visualizer plugin passed in is wrong ([660b0cb](https://github.com/VuePlusOrg/vue3-base/commit/660b0cb12ecc80fad3b209f4685cd34b5bacd730))
 
 
 ### Features
 
-* basically complete the project upgrade ([178f141](https://github.com/VuePlusOrg/vue3-base/commit/178f141bd3119e00e48fd2add1f8a24d6b70642a))
+* **.husky:** added commit message format check and pre-commit code lint check ([7bd0c7f](https://github.com/VuePlusOrg/vue3-base/commit/7bd0c7f65bc2685daa499b24f3663ef6cef53a4a))
+* **app-sider:** added sider support for internationalization ([eeac43a](https://github.com/VuePlusOrg/vue3-base/commit/eeac43a053298bb984340d7392c2282c881b095c))
+* **tsconfig.app.json:** added TypeScript support for ts files and tsx files ([b527f33](https://github.com/VuePlusOrg/vue3-base/commit/b527f33aa924e7ae306fcd33b042ae4eecf4f3c3))
 
 
 
@@ -27,3 +34,14 @@
 * **user-store:** Modify the default gender to -1 ([ebc4dd2](https://github.com/VuePlusOrg/vue3-base/commit/ebc4dd20e380c7fcaa305b327e9f333d6a45c82f))
 * **views:** add route name for page ([2e7bf2d](https://github.com/VuePlusOrg/vue3-base/commit/2e7bf2d143488887fd2cb602dd9e0f3d6549e1e8))
 * **views:** remove counter page & mock page ([d6a9a67](https://github.com/VuePlusOrg/vue3-base/commit/d6a9a67d3f218355975a4e2bdc099d6f08bbc382))
+
+
+
+# [1.0.0](https://github.com/VuePlusOrg/vue3-base/compare/f602c5a4972f5b5b5c7aebbc201ab533e87025b3...v1.0.0) (2022-12-26)
+
+
+### Features
+
+* basically complete the project upgrade ([178f141](https://github.com/VuePlusOrg/vue3-base/commit/178f141bd3119e00e48fd2add1f8a24d6b70642a))
+
+
