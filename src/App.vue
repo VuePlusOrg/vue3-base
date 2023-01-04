@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 import enUS from 'ant-design-vue/es/locale/en_US'
@@ -19,12 +19,19 @@ const antdLocale = computed(
   () => antdLocales[appStore.locale as keyof typeof antdLocales]
 )
 
+const removeGlobalLoading = () =>
+  document.getElementById('global-loading')?.remove()
+
 watch(
   () => appStore.locale,
   newLocale => {
     i18NLocale.value = newLocale
   }
 )
+
+onMounted(() => {
+  removeGlobalLoading()
+})
 </script>
 
 <template>

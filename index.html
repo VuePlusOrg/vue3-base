@@ -11,8 +11,24 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover"
     />
     <title>vue3-base</title>
+    <style>
+      #global-loading {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+      }
+    </style>
   </head>
   <body>
+    <div id="global-loading">
+      <img
+        src="loading.svg"
+        alt="loading"
+      />
+    </div>
     <div id="app"></div>
     <script
       type="module"
