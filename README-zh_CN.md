@@ -57,24 +57,44 @@
 
 ## 架构说明
 ### 路由配置
-在本套框架体系中，您不需要关注任何的路由配置信息。您只需要将对应的页面放置于对应层级和名称的`@/views` 文件夹中，框架便会进行自动化的路由构建和解析。
+在本套框架体系中，您不需要关注任何的路由配置信息。您只需要将对应的页面放置于对应层级和名称的`@/views`文件夹中，框架便会进行自动化的路由构建和解析。
+
+#### 路径解析
 
 下面便是一个案例的目录结构所会被框架解析为的路由路径。
+
 ```
-|-- views
-    |-- home
-    | |-- index.vue     👉  /
-    |-- pageA
-    | |-- index.vue     👉  /pageA
-    | |-- sub1.vue      👉  /pageA/sub1
-    | |-- sub2
-    | | |-- index.vue   👉  /pageA/sub2
-    |-- pageB
-    | |-- index.vue     👉  /pageB
-    | |-- sub1.vue      👉  /pageB/sub1
-    | |-- sub2
-    | | |-- index.vue   👉  /pageB/sub2
+|-- views/
+  |-- home/
+  | |-- index.vue        👉  /
+  |-- pageA/
+  | |-- index.vue        👉  /pageA
+  | |-- sub1.vue         👉  /pageA/sub1
+  | |-- sub2/
+  | | |-- index.vue      👉  /pageA/sub2
+  |-- pageB/
+  | |-- index.vue        👉  /pageB
+  | |-- sub1.vue         👉  /pageB/sub1
+  | |-- sub2/
+  | | |-- index.vue      👉  /pageB/sub2
+  |-- pageC/
+  | |-- [id]/
+  | | |-- index.vue      👉  /pageC/:id (e.g. /pageC/6)
+  | | |-- detail.vue     👉  /pageC/:id/detail (e.g. /pageC/6/detail)
 ```
+
+#### 参数配置
+本套自动化的路由体系同样支持完善的路由参数配置。您只需要在指定页面的最外层添加自定义标签`<route>`即可。
+
+```html
+<route lang="yaml">
+name: name-override
+meta:
+  requiresAuth: true
+</route>
+```
+
+route标签内支持JSON方式的配置项传入，但我们依旧建议您使用YAML进行路由的配置，因为我们认为这将会比JSON更加简洁明了。
 
 ### 组件化
 组件区分全局组件和局部组件两种类型。若您需要创建全局组件，则仅需要将组件放置至 `@/components` 文件夹中，按照大驼峰规范进行正确命名，该组件则将会自动注册至全局。
@@ -110,8 +130,8 @@
 <i18n src="./i18n.json"></i18n>
 ```
 
-### Stores
-框架同样提供了数据中心化的相关能力，我们选用了 [Pinia](https://pinia.vuejs.org/)（Vue官方目前推荐的携带完整类型系统的数据仓库解决方案）作为了我们的数据中心化实现方案。具体使用细节请参考 `Pinia` 官方文档。
+### 状态管理
+框架同样提供了状态管理的相关能力，我们选用了 [Pinia](https://pinia.vuejs.org/)（Vue官方目前推荐的携带完整类型系统的数据仓库解决方案）作为了我们的中心化状态管理的实现方案。具体使用细节请参考 `Pinia` 官方文档。
 
 Pinia 目前提供了 `Option Store` & `Setup Store` 两种 API 以供用户进行业务开发。**但我们依旧建议我们的框架使用者能使用 `Setup Store` 进行相关业务开发，就像我们案例中提供的那样。**
 
@@ -119,6 +139,12 @@ Pinia 目前提供了 `Option Store` & `Setup Store` 两种 API 以供用户进�
 为了保证 `main.ts` 文件的清洁和高可维护性，我们创立了 `plugin` 的概念。即涉及到需要导入至 `main.ts` 文件的部分，我们要求统一以 `plugin` 的方式进行实现。最后再以创建的 `plugin` 进行导入。
 
 如你所见，我们现已内建了3个 `plugin`，这三个 `plugin` 和项目基建挂钩，我们不建议您轻易进行编辑或删除。
+
+### Mock
+
+框架提供了Mock数据请求的相关配置。Mock数据可以使前后端完全分离，并且通过随机数据，可以有效提高单元测试的真实性。
+
+Mock请求的数据配置文件应放置于`/mock`文件夹中。并且，若后端项目采用微服务架构，我们建议您相同服务的接口放置于一个文件内。
 
 ### 全局样式
 我们建议您将全局的样式文件放置于 `@/styles` 文件夹目录下，并在放置完成后，导入至 `main.less` 以注册它。我们不建议您直接将文件导入至 `main.ts` 文件中。这在项目规模逐渐增大后，可能会带来一定的项目管控成本。
