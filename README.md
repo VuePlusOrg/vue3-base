@@ -1,5 +1,7 @@
 # vue3-base
 
+English | [简体中文](./README-zh_CN.md)
+
 ## Introduction
 This project is a front-end infrastructure system based on Vue3. Based on this architecture, front-end developers can be more quickly and more engineeringly engaged in business development.
 
