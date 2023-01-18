@@ -1,4 +1,13 @@
-# [1.1.1](https://github.com/VuePlusOrg/vue3-base/compare/v1.1.0...v1.1.1) (2023-01-03)
+## [1.1.2](https://github.com/VuePlusOrg/vue3-base/compare/v1.1.1...v1.1.2) (2023-01-18)
+
+
+### Features
+
+* **index.html & app.vue:** added a global loading pop-up window before the resource file is loaded ([9c76140](https://github.com/VuePlusOrg/vue3-base/commit/9c7614011e8401c4e4e4d80dfa7c38d610ebf267))
+
+
+
+## [1.1.1](https://github.com/VuePlusOrg/vue3-base/compare/v1.1.0...v1.1.1) (2023-01-03)
 
 
 ### Bug Fixes
@@ -14,7 +23,7 @@
 
 
 
-# [1.1.0](https://github.com/VuePlusOrg/vue3-base/compare/v1.0.0...v1.1.0) (2022-12-30)
+## [1.1.0](https://github.com/VuePlusOrg/vue3-base/compare/v1.0.0...v1.1.0) (2022-12-30)
 
 
 ### Bug Fixes
@@ -37,7 +46,7 @@
 
 
 
-# [1.0.0](https://github.com/VuePlusOrg/vue3-base/compare/f602c5a4972f5b5b5c7aebbc201ab533e87025b3...v1.0.0) (2022-12-26)
+## [1.0.0](https://github.com/VuePlusOrg/vue3-base/compare/f602c5a4972f5b5b5c7aebbc201ab533e87025b3...v1.0.0) (2022-12-26)
 
 
 ### Features

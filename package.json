@@ -1,6 +1,6 @@
 {
   "name": "vue3-base",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "description": "A Vue3-based project infrastructure that can help you quickly and engineer Vue3-based project development.",
   "author": {
