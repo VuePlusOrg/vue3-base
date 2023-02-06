@@ -38,17 +38,15 @@ export default defineComponent({
             <SubMenu
               v-else
               key={config.routeName}
-              title={() => (
+              title={
                 <span>
                   {h(config.icon)}
                   <span>{config.title}</span>
                 </span>
-              )}
+              }
             >
               {config.children.map(subConfig => (
-                <MenuItem key={subConfig.routeName}>
-                  {subConfig.routeName}
-                </MenuItem>
+                <MenuItem key={subConfig.routeName}>{subConfig.title}</MenuItem>
               ))}
             </SubMenu>
           )
