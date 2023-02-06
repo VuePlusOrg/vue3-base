@@ -1,3 +1,12 @@
+## [1.1.3](https://github.com/VuePlusOrg/vue3-base/compare/v1.1.2...v1.1.3) (2023-02-06)
+
+
+### Bug Fixes
+
+* **app-sider:** fix the problem that Sider with submenus renders abnormally ([90218db](https://github.com/VuePlusOrg/vue3-base/commit/90218dbf168d66ddd0dccaeea2e511cb9c4c93fe))
+
+
+
 ## [1.1.2](https://github.com/VuePlusOrg/vue3-base/compare/v1.1.1...v1.1.2) (2023-01-18)
 
 
