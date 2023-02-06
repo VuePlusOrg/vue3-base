@@ -2,6 +2,7 @@ import { computed, defineComponent, ref, h } from 'vue'
 import { Menu, MenuItem, LayoutSider, SubMenu } from 'ant-design-vue'
 import { DashboardOutlined } from '@ant-design/icons-vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 import type { MenuConfig } from '@/types'
 import './AppSider.less'
 
@@ -11,6 +12,7 @@ export default defineComponent({
       inheritLocale: true,
       useScope: 'global'
     })
+    const router = useRouter()
 
     const collapsed = ref(false)
     const selectedKeys = ref(['1'])
@@ -28,7 +30,10 @@ export default defineComponent({
       menuConfig.value.forEach(config => {
         if (!Array.isArray(config.children)) {
           DOMList.push(
-            <MenuItem key={config.routeName}>
+            <MenuItem
+              key={config.routeName}
+              onClick={() => router.push({ name: config.routeName })}
+            >
               {h(config.icon)}
               <span>{t(config.title)}</span>
             </MenuItem>
@@ -46,7 +51,12 @@ export default defineComponent({
               }
             >
               {config.children.map(subConfig => (
-                <MenuItem key={subConfig.routeName}>{subConfig.title}</MenuItem>
+                <MenuItem
+                  key={subConfig.routeName}
+                  onClick={() => router.push({ name: subConfig.routeName })}
+                >
+                  {subConfig.title}
+                </MenuItem>
               ))}
             </SubMenu>
           )
