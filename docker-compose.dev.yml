@@ -1,0 +1,12 @@
+version: '3'
+services:
+  vue3-ts-base-dev:
+    container_name: vue3-ts-base-dev
+    restart: always
+    platform: linux/x86_64
+    image: nginx
+    volumes:
+      - ./dist:/app
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 10000:80
